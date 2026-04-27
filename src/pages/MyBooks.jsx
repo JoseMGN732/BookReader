@@ -10,7 +10,6 @@ const MyBooks = () => {
   const [history, setHistory] = useState([]);
   const [progress, setProgress] = useState({});
 
-  // ❌ eliminar favorito (PRO)
   const removeFavorite = (id) => {
     let favs = getStorage(user, "favorites") || [];
 
@@ -20,7 +19,6 @@ const MyBooks = () => {
     setFavorites(favs);
   };
 
-  // 📥 cargar datos
   useEffect(() => {
     if (!user) return;
 
@@ -31,11 +29,10 @@ const MyBooks = () => {
 
   return (
     <div className="mybooks-container">
-      <h1>📚 Mis Libros</h1>
+      <h1>Mis Libros</h1>
 
-      {/* ⭐ FAVORITOS */}
       <section>
-        <h2>⭐ Favoritos</h2>
+        <h2>Favoritos</h2>
         <div className="books-grid">
           {favorites.length === 0 ? (
             <p>No tienes favoritos aún</p>
@@ -62,9 +59,8 @@ const MyBooks = () => {
         </div>
       </section>
 
-      {/* 📖 CONTINUAR LEYENDO */}
       <section>
-        <h2>📖 Continuar leyendo</h2>
+        <h2>Continuar leyendo</h2>
         <div className="books-grid">
           {Object.keys(progress).length === 0 ? (
             <p>No tienes progreso guardado</p>
@@ -80,9 +76,8 @@ const MyBooks = () => {
         </div>
       </section>
 
-      {/* 🕒 HISTORIAL */}
       <section>
-        <h2>🕒 Historial</h2>
+        <h2>Historial</h2>
         <div className="books-grid">
           {history.length === 0 ? (
             <p>No hay historial</p>

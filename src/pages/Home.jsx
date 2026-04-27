@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
-import { getStorage, setStorage } from "../utils/storage"; // 🔥 NUEVO
+import { getStorage, setStorage } from "../utils/storage";
+import { useBooks } from "../context/BooksContext";
 import "../css/Home.css";
 
 const Home = () => {
@@ -25,12 +26,21 @@ const Home = () => {
     fetchBooks();
   }, []);
 
+  const Home = () => {
+    const { books, fetchBooks, loading } = useBooks();
+    const [search, setSearch] = useState("");
+
+    const handleSearch = (e) => {
+      e.preventDefault();
+      fetchBooks(search);
+    };
+  }
+
   const handleSearch = (e) => {
     e.preventDefault();
     fetchBooks(search);
   };
 
-  // ⭐ AGREGAR FAVORITO (PRO)
   const addFavorite = (book) => {
     if (!user) {
       alert("Debes iniciar sesión para usar favoritos");
@@ -56,7 +66,6 @@ const Home = () => {
     setStorage(user, "favorites", favorites);
   };
 
-  // ⭐ VALIDAR FAVORITO
   const isFavorite = (id) => {
     const favorites = getStorage(user, "favorites") || [];
     return favorites.some((b) => b.id === id);
@@ -64,9 +73,8 @@ const Home = () => {
 
   return (
     <div className="home-container">
-      <h1>📚 Biblioteca</h1>
+      <h1>Biblioteca</h1>
 
-      {/* 🔍 BUSCADOR */}
       <form onSubmit={handleSearch} className="search-box">
         <input
           type="text"
@@ -77,7 +85,6 @@ const Home = () => {
         <button>Buscar</button>
       </form>
 
-      {/* 📚 LIBROS */}
       <div className="books-grid">
         {books.length > 0 ? (
           books.map((book) => {
@@ -91,7 +98,6 @@ const Home = () => {
             return (
               <div className="book-card" key={book.id}>
                 
-                {/* 🔒 CONTROL DE ACCESO */}
                 {user ? (
                   <Link to={`/reader/${book.id}`} state={{ book }}>
                     <img src={cover} alt={book.title} />
@@ -110,7 +116,6 @@ const Home = () => {
                   </div>
                 )}
 
-                {/* ⭐ FAVORITOS */}
                 {user && (
                   <button
                     className={`fav-btn ${

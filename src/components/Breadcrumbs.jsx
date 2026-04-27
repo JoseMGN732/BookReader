@@ -15,7 +15,6 @@ const Breadcrumbs = () => {
       {pathnames.map((value, index) => {
         const to = "/" + pathnames.slice(0, index + 1).join("/");
 
-        // 🔥 traducir rutas
         let name = value;
 
         if (value === "dashboard") name = "Dashboard";

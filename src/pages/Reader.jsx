@@ -13,10 +13,8 @@ const Reader = () => {
   const [pages, setPages] = useState([]);
   const [currentPage, setCurrentPage] = useState(0);
 
-  // 📚 info del libro (desde Home)
   const bookData = location.state?.book;
 
-  // 📥 cargar libro
   useEffect(() => {
     if (!user) {
       navigate("/login");
@@ -39,7 +37,6 @@ const Reader = () => {
 
         setPages(paginated);
 
-        // 📖 recuperar progreso
         const progress = getStorage(user, "progress") || {};
 
         if (progress[id]) {
@@ -54,7 +51,6 @@ const Reader = () => {
     fetchBook();
   }, [id, user]);
 
-  // 💾 guardar progreso (PRO)
   useEffect(() => {
     if (!user || pages.length === 0) return;
 
@@ -72,7 +68,6 @@ const Reader = () => {
     setStorage(user, "progress", progress);
   }, [currentPage, id, user, pages]);
 
-  // 👉 navegación
   const nextPage = () => {
     if (currentPage < pages.length - 1) {
       setCurrentPage(currentPage + 1);

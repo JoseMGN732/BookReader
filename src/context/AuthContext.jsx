@@ -5,7 +5,6 @@ const AuthContext = createContext();
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
 
-  // 🔥 1. CREAR ADMIN AUTOMÁTICO (NUEVO)
   useEffect(() => {
     const users = JSON.parse(localStorage.getItem("users")) || [];
 
@@ -23,7 +22,7 @@ export const AuthProvider = ({ children }) => {
       users.push(adminUser);
       localStorage.setItem("users", JSON.stringify(users));
 
-      console.log("✅ Admin creado automáticamente");
+      console.log("Admin creado automáticamente");
     }
   }, []);
 
@@ -49,7 +48,6 @@ export const AuthProvider = ({ children }) => {
 
       setUser(userData);
 
-      // 🔥 guardar sesión
       localStorage.setItem("session", JSON.stringify(userData));
 
       return true;
@@ -58,7 +56,6 @@ export const AuthProvider = ({ children }) => {
     return false;
   };
 
-  // 📝 REGISTER
   const register = (email, password) => {
     const users = JSON.parse(localStorage.getItem("users")) || [];
 
@@ -94,5 +91,4 @@ export const AuthProvider = ({ children }) => {
   );
 };
 
-// hook
 export const useAuth = () => useContext(AuthContext);

@@ -11,7 +11,6 @@ const Contact = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // Simulación (puedes conectar a backend después)
     alert("Mensaje enviado correctamente");
 
     console.log(form);

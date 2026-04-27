@@ -1,10 +1,13 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import App from "./App";
+import AppRouter from "./routes/AppRouter";
 import { AuthProvider } from "./context/AuthContext";
+import { BooksProvider } from "./context/BooksContext";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <AuthProvider>
-    <App />
+    <BooksProvider>
+      <AppRouter />
+    </BooksProvider>
   </AuthProvider>
 );

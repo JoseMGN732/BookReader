@@ -4,7 +4,7 @@ const About = () => {
   return (
     <div className="about-container">
       <div className="about-card">
-        <h1>📖 Sobre Nosotros</h1>
+        <h1>Sobre Nosotros</h1>
 
         <p>
           BookReader es una plataforma diseñada para facilitar la lectura de libros
