@@ -1,0 +1,137 @@
+.home-container {
+  padding: 30px;
+  text-align: center;
+}
+
+.home-container h1 {
+  margin-bottom: 20px;
+}
+
+.books-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  
+  gap: 50px; /* 👈 Esto separa TODO (filas y columnas) */
+
+  align-items: stretch; /* 👈 CLAVE */
+}
+
+.book-card {
+  background: #1a2330;
+  border-radius: 12px;
+  padding: 15px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  height: 50%; /* 👈 CLAVE */
+  min-height: 350px; /* 👈 ESTO ARREGLA LAS FILAS */
+}
+
+.book-card:hover {
+  transform: scale(1.05);
+  z-index: 2;
+}
+
+.book-card img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover; /* 👈 CLAVE */
+  border-radius: 8px;
+}
+
+.book-card h3 {
+  margin: 10px 0;
+  font-size: 14px;
+  color: white;
+
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.book-card p {
+  font-size: 14px;
+  color: #ABBF9B;
+}
+
+.search-input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+}
+
+.search-box {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+  gap: 10px;
+}
+
+.search-box input {
+  width: 300px;
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  background: #E6E2D7;
+}
+
+.search-box button {
+  background: #A2663C;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
+}
+
+.search-box button:hover {
+  opacity: 0.9;
+}
+
+/* contenedor relativo para posicionar el botón */
+.book-card {
+  position: relative;
+}
+
+/* botón favoritos */
+.fav-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+
+  background: rgba(0,0,0,0.6);
+  border: none;
+  border-radius: 50%;
+
+  width: 35px;
+  height: 35px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+  color: #E4CDB0;
+  font-size: 18px;
+
+  transition: 0.3s;
+}
+
+/* hover */
+.fav-btn:hover {
+  background: #A2663C;
+  color: white;
+  transform: scale(1.2);
+}
+
+.fav-btn.active {
+  background: #ABBF9B;
+  color: #3F1D0E;
+}

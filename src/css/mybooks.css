@@ -1,0 +1,73 @@
+.mybooks-container {
+  padding: 30px;
+  color: #E6E2D7;
+  background: #0f1720;
+  min-height: 100vh;
+}
+
+.mybooks-container h1 {
+  margin-bottom: 20px;
+}
+
+section {
+  margin-bottom: 40px;
+}
+
+section h2 {
+  color: #ABBF9B;
+  margin-bottom: 15px;
+}
+
+/* reutilizamos tu grid */
+.books-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 20px;
+}
+
+.book-card {
+  background: #1a2330;
+  padding: 15px;
+  border-radius: 12px;
+  text-align: center;
+}
+
+.book-card img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.book-card {
+  position: relative;
+}
+
+/* botón eliminar */
+.remove-btn {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+
+  background: rgba(0,0,0,0.6);
+  border: none;
+  border-radius: 50%;
+
+  width: 30px;
+  height: 30px;
+
+  cursor: pointer;
+  color: #E6E2D7;
+  font-size: 14px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transition: 0.3s;
+}
+
+.remove-btn:hover {
+  background: #A2663C;
+  transform: scale(1.2);
+}

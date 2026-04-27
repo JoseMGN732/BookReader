@@ -1,0 +1,26 @@
+.dashboard-container {
+  padding: 30px;
+  color: #E6E2D7;
+  background: #0f1720;
+  min-height: 100vh;
+}
+
+.dashboard-container h1 {
+  margin-bottom: 20px;
+}
+
+.dashboard-card {
+  background: #1a2330;
+  padding: 20px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+}
+
+.dashboard-card h2 {
+  color: #ABBF9B;
+  margin-bottom: 10px;
+}
+
+.dashboard-card p {
+  margin: 5px 0;
+}

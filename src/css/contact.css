@@ -1,0 +1,48 @@
+.contact-container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #1a2330);
+}
+
+.contact-card {
+  background: #E4CDB0;
+  padding: 40px;
+  border-radius: 16px;
+  width: 400px;
+  text-align: center;
+}
+
+.contact-card h1 {
+  color: #3F1D0E;
+  margin-bottom: 10px;
+}
+
+.contact-card p {
+  color: #A2663C;
+  margin-bottom: 20px;
+}
+
+.contact-card input,
+.contact-card textarea {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 8px;
+  border: none;
+}
+
+.contact-card button {
+  width: 100%;
+  padding: 12px;
+  background: #A2663C;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
+}
+
+.contact-card button:hover {
+  background: #3F1D0E;
+}

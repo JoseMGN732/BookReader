@@ -1,0 +1,93 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background: #1a2330;
+  border-bottom: 1px solid #2a3445;
+}
+
+.logo {
+  font-size: 20px;
+  font-weight: bold;
+  color: #E4CDB0;
+}
+
+.nav-links a {
+  margin-left: 20px;
+  text-decoration: none;
+  color: #E6E2D7;
+  transition: 0.3s;
+}
+
+.nav-links a:hover {
+  color: #A2663C;
+}
+
+.logout-btn {
+  margin-left: 20px;
+  padding: 6px 12px;
+  background: #A2663C;
+  border: none;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.logout-btn:hover {
+  background: #3F1D0E;
+}
+
+.user-role {
+  margin-left: 15px;
+  color: #ABBF9B;
+  font-size: 14px;
+}
+
+/* 📱 BOTÓN MENÚ (oculto en desktop) */
+.menu-toggle {
+  display: none;
+  font-size: 24px;
+  color: #E4CDB0;
+  cursor: pointer;
+}
+
+/* 📱 RESPONSIVE */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 70px;
+    right: 0;
+    background: #1a2330;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    /* 🔥 oculto por defecto */
+    max-height: 0;
+    overflow: hidden;
+    transition: 0.3s ease;
+  }
+
+  .nav-links.active {
+    max-height: 300px;
+    padding: 15px 0;
+  }
+
+  .nav-links a {
+    margin: 10px 0;
+  }
+
+  .logout-btn {
+    margin: 10px 0;
+  }
+
+  .user-role {
+    margin: 10px 0;
+  }
+}

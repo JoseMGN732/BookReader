@@ -1,0 +1,26 @@
+.about-container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #0f1720;
+}
+
+.about-card {
+  background: #E4CDB0;
+  padding: 40px;
+  border-radius: 16px;
+  width: 500px;
+  text-align: center;
+}
+
+.about-card h1 {
+  color: #3F1D0E;
+  margin-bottom: 20px;
+}
+
+.about-card p {
+  color: #A2663C;
+  margin-bottom: 15px;
+  line-height: 1.5;
+}
